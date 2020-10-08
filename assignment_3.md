@@ -23,24 +23,18 @@ Assignment 3: Data visualization with ggplot
   - When a verbal respons is needed, answer by replacing the parts that
     say “Write your response here”.
 
-  - You will use the product of this assignment as a template for your
-    third assignment, where you will actually fill out the code chunks.
+  - Use R Markdown functionalities to **hide messages and warnings when
+    needed**. (suggestion: messages and warnings can often be
+    informative and important, so please examine them carefully and only
+    turn them off when you finish the excercise).
 
-  - You will have to submit your assignment through GitHub. You can
-    complete your template after Wednesday’s class (09/16/20), but don’t
-    worry about submitting it until after we have gone over how to
-    submit it through GitHub in Monday’s class (09/21/20). To do so, you
-    will first move assignment\_1.Rmd and assignment\_1.md to the
-    problem\_sets folder in your own GitHub repository that you have
-    created in class through GitHub Classroom. (If you haven’t created
-    this rep yet, please use the following url:
-    <https://classroom.github.com/a/SA7QIA7g>). Then, you can stage
-    these files, make a commit, and push the commit.
+  - You can start by making a xopy of the R markdown template that you
+    created at last week’s assignment and work from there.
 
-## Load packages
+  - First, load all the required packages with the following code.
+    Install them if they are not installed yet.
 
-To start, load all the required packages with the following code.
-Install them if they are not installed yet.
+<!-- end list -->
 
 ``` r
 library(tidyverse)
@@ -60,13 +54,14 @@ country is perceived to be.)
 First, we load the data using the following code.
 
 ``` r
-## Write your code here
+economist_data <- read.csv("https://raw.githubusercontent.com/nt246/NTRES6940-data-science/master/datasets/EconomistData.csv")
 ```
 
 **1.1 Show the first few rows of `economist_data`.**
 
 ``` r
-## Write your code here
+economist_data %>% 
+head()
 ```
 
 **1.2 Explore the relationship between human development index (`HDI`)
@@ -74,20 +69,23 @@ and corruption perception index (`CPI`) with a scatter plot as the
 following.**
 
 ``` r
-## Write your code here
+ggplot(economist_data, mapping= aes(x = CPI, y = HDI))+
+  geom_point()
 ```
 
 **1.3 Make the color of all points in the previous plot red**
 
 ``` r
-## Write your code here
+ggplot(economist_data, mapping= aes(x = CPI, y = HDI, col = "red")) +
+  geom_point()
 ```
 
 **1.4 Color the points in the previous plot according to the `Region`
 variable, and set the size of points to 2.**
 
 ``` r
-## Write your code here
+ggplot(economist_data, mapping= aes(x = CPI, y = HDI, color = Region, size = 2)) +
+  geom_point()
 ```
 
 **1.5 Set the size of the points prooprtional to `HDI.Rank`**

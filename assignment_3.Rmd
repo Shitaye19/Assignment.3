@@ -71,7 +71,8 @@ ggplot(economist_data, mapping= aes(x = CPI, y = HDI))+
 
 
 ```{r}
-## Write your code here
+ggplot(economist_data, mapping= aes(x = CPI, y = HDI, col = "red")) +
+  geom_point()
 ```
 
 
@@ -79,7 +80,8 @@ ggplot(economist_data, mapping= aes(x = CPI, y = HDI))+
 **1.4 Color the points in the previous plot according to the `Region` variable, and set the size of points to 2.**
 
 ```{r}
-## Write your code here
+ggplot(economist_data, mapping= aes(x = CPI, y = HDI, color = Region, size = 2)) +
+  geom_point()
 ```
 
 
