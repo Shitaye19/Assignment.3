@@ -163,7 +163,8 @@ ggplot(economist_data, aes(x = Region, y = HDI, fill = Region))+
 **1.12 Show the count of countries in each region using a bar plot.**
 
 ```{r}
-## Write your code here
+ggplot(economist_data, aes(x = Region))+
+  geom_bar()
 ```
 
 
