@@ -44,7 +44,7 @@ First, we load the data using the following code.
 
 
 ```{r}
-## Write your code here
+economist_data <- read.csv("https://raw.githubusercontent.com/nt246/NTRES6940-data-science/master/datasets/EconomistData.csv")
 ```
 
 
@@ -53,14 +53,16 @@ First, we load the data using the following code.
 
 
 ```{r}
-## Write your code here
+economist_data %>% 
+head()
 ```
 
 **1.2 Explore the relationship between human development index (`HDI`) and corruption perception index (`CPI`) with a scatter plot as the following.**
 
 
 ```{r}
-## Write your code here
+ggplot(economist_data, mapping= aes(x = CPI, y = HDI))+
+  geom_point()
 ```
 
 
