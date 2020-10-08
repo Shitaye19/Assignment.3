@@ -133,7 +133,9 @@ geom_smooth(method= "lm", se=FALSE)+
 **1.9 Show the distribution of `HDI` in each region using density plot. Set the transparency to 0.5**
 
 ```{r}
-## Write your code here
+ggplot(economist_data, aes(x = HDI, fill = Region)) +
+  geom_density(alpha = 0.5)
+
 ```
 
 
