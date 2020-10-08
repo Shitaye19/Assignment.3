@@ -180,10 +180,20 @@ I think the scatter plot on question 1.8 is informative. Because it shows a line
 This exercise uses the dataset `economics` from the ggplot2 package. It was produced from US economic time series data availabe from http://research.stlouisfed.org/fred2. It describes the number of unemployed persons (`unemploy`), among other variables, in the US from 1967 to 2015. 
 
 ```{r}
-## Write your code here
+library(ggplot2)
+
+```
+head(economics) %>% kable()
+
+```{r}
+
+
 ```
 
+
 **2.1 Plot the trend in number of unemployed persons (`unemploy`) though time using the economics dataset shown above. And for this question only, hide your code and only show the plot.**
+
+
 
 ```{r}
 ## Write your code here

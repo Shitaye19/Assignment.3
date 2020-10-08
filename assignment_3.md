@@ -108,28 +108,36 @@ geom_smooth()
 the confidence** interval
 
 ``` r
-## Write your code here
+ggplot(economist_data, mapping= aes(x = CPI, y = HDI, color = Region))+ #, size = 0.2)) +
+  geom_point()+
+geom_smooth(method= "lm", se=FALSE)
 ```
 
 **1.8 Building on top of the previous plot, show each `Region` in a
 different facet.**
 
 ``` r
-## Write your code here
+ggplot(economist_data, mapping= aes(x = CPI, y = HDI, color = Region))+ #, size = 0.2)) +
+  geom_point()+
+geom_smooth(method= "lm", se=FALSE)+
+  facet_wrap(~ Region, nrow =2)
 ```
 
 **1.9 Show the distribution of `HDI` in each region using density plot.
 Set the transparency to 0.5**
 
 ``` r
-## Write your code here
+ggplot(economist_data, aes(x = HDI, fill = Region)) +
+  geom_density(alpha = 0.5)
 ```
 
 **1.10 Show the distribution of `HDI` in each region using histogram and
 facetting.**
 
 ``` r
-## Write your code here
+ggplot(economist_data, aes(x = HDI, fill = Region))+
+  geom_histogram()+
+  facet_wrap(~Region, nrow = 2)
 ```
 
 **1.11 Show the distribution of `HDI` in each region using a box plot.
@@ -138,13 +146,16 @@ country in the same plot. (Hint: `geom_jitter()` or `position _jitter()`
 might be useful.)**
 
 ``` r
-## Write your code here
+ggplot(economist_data, aes(x = Region, y = HDI, fill = Region))+
+  geom_boxplot(alpha = 0.5)+
+  geom_jitter(aes(color=Region))
 ```
 
 **1.12 Show the count of countries in each region using a bar plot.**
 
 ``` r
-## Write your code here
+ggplot(economist_data, aes(x = Region))+
+  geom_bar()
 ```
 
 **1.13 You have now created a variety of different plots of the same
@@ -152,6 +163,10 @@ dataset. Which of your plots do you think are the most informative?
 Describe brifely the major trends that you see in the data.**
 
 Answer: write your response here.
+
+I think the scatter plot on question 1.8 is informative. Because it
+shows a linear looking increase in human development index with
+corruption perception index.
 
 ## Excercise 2. Unemployment in the US 1967-2015
 
