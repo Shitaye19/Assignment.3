@@ -187,8 +187,8 @@ library(ggplot2)
 
 ```{r}
 
-head(economics) %>% 
-kniter::kable() #doesn't work
+#head(economics) %>% 
+#kniter::kable() #doesn't work
 
 ```
 
@@ -198,7 +198,8 @@ kniter::kable() #doesn't work
 
 
 ```{r}
-## Write your code here
+ggplot(economics, aes(x = date, y = unemploy))+
+  geom_line()
 ```
 
 
@@ -206,7 +207,13 @@ kniter::kable() #doesn't work
 **2.2 Edit the plot title and axis lables of the previous plot appropriately. Make y axis start from0. Change the background theme to what is shown below. (Hint: search for help online if needed)**
 
 ```{r}
-## Write your code here
+ggplot(economics, aes(x = date, y = unemploy))+
+  geom_line()+
+  labs(title = "Unemployment in the US 1967-2015",
+       x = "Year",
+       y = "Number of unemployed persons (inthousands)")+
+  ylim(0,15000 )+
+   theme_bw()
 ```
 
 
