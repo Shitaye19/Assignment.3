@@ -91,14 +91,17 @@ ggplot(economist_data, mapping= aes(x = CPI, y = HDI, color = Region, size = 2))
 **1.5 Set the size of the points prooprtional to `HDI.Rank`**
 
 ``` r
-## Write your code here
+ggplot(economist_data, mapping= aes(x = CPI, y = HDI, color = Region, size = HDI.Rank)) +
+  geom_point()
 ```
 
 **1.6 Fit smoothing line to all the data points in the scatter plot from
 Exercise 1.4**
 
 ``` r
-## Write your code here
+ggplot(economist_data, mapping= aes(x = CPI, y = HDI))+ #, color = Region, size = 2)) +
+  geom_point(mapping = aes(color = Region, size = 2))+
+geom_smooth()
 ```
 
 **1.7 Fit a separate straight line for each region instead, and turn off
