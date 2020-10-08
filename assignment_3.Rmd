@@ -183,10 +183,12 @@ This exercise uses the dataset `economics` from the ggplot2 package. It was prod
 library(ggplot2)
 
 ```
-head(economics) %>% kable()
+
 
 ```{r}
 
+head(economics) %>% 
+kniter::kable() #doesn't work
 
 ```
 
