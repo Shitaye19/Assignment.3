@@ -153,7 +153,9 @@ ggplot(economist_data, aes(x = HDI, fill = Region))+
 **1.11 Show the distribution of `HDI` in each region using a box plot. Set the transparency of these boxes to 0.5. Also data points for each country in the same plot. (Hint: `geom_jitter()` or `position _jitter()` might be useful.)**
 
 ```{r}
-## Write your code here
+ggplot(economist_data, aes(x = Region, y = HDI, fill = Region))+
+  geom_boxplot(alpha = 0.5)+
+  geom_jitter(aes(color=Region))
 ```
 
 
