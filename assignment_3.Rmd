@@ -143,7 +143,9 @@ ggplot(economist_data, aes(x = HDI, fill = Region)) +
 **1.10 Show the distribution of `HDI` in each region using histogram and facetting.**
 
 ```{r}
-## Write your code here
+ggplot(economist_data, aes(x = HDI, fill = Region))+
+  geom_histogram()+
+  facet_wrap(~Region, nrow = 2)
 ```
 
 
