@@ -177,7 +177,12 @@ unemployed persons (`unemploy`), among other variables, in the US from
 1967 to 2015.
 
 ``` r
-## Write your code here
+library(ggplot2)
+```
+
+``` r
+#head(economics) %>% 
+#kniter::kable() #doesn't work
 ```
 
 **2.1 Plot the trend in number of unemployed persons (`unemploy`) though
@@ -185,7 +190,8 @@ time using the economics dataset shown above. And for this question
 only, hide your code and only show the plot.**
 
 ``` r
-## Write your code here
+ggplot(economics, aes(x = date, y = unemploy))+
+  geom_line()
 ```
 
 **2.2 Edit the plot title and axis lables of the previous plot
@@ -193,5 +199,11 @@ appropriately. Make y axis start from0. Change the background theme to
 what is shown below. (Hint: search for help online if needed)**
 
 ``` r
-## Write your code here
+ggplot(economics, aes(x = date, y = unemploy))+
+  geom_line()+
+  labs(title = "Unemployment in the US 1967-2015",
+       x = "Year",
+       y = "Number of unemployed persons (inthousands)")+
+  ylim(0,15000 )+
+   theme_bw()
 ```
