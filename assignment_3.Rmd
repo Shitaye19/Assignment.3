@@ -173,6 +173,8 @@ ggplot(economist_data, aes(x = Region))+
 
 Answer: write your response here.
 
+I think the scatter plot on question 1.8 is informative. Because it shows a linear looking increase in human development index with corruption perception index.
+
 ## Excercise 2. Unemployment in the US 1967-2015
 
 This exercise uses the dataset `economics` from the ggplot2 package. It was produced from US economic time series data availabe from http://research.stlouisfed.org/fred2. It describes the number of unemployed persons (`unemploy`), among other variables, in the US from 1967 to 2015. 
