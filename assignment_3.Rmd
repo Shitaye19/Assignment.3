@@ -119,9 +119,14 @@ geom_smooth(method= "lm", se=FALSE)
 **1.8 Building on top of the previous plot, show each `Region` in a different facet.**
 
 ```{r}
-## Write your code here
+ggplot(economist_data, mapping= aes(x = CPI, y = HDI, color = Region))+ #, size = 0.2)) +
+  geom_point()+
+geom_smooth(method= "lm", se=FALSE)+
+  facet_wrap(~ Region, nrow =2)
+
 
 ```
+
 
 
 
