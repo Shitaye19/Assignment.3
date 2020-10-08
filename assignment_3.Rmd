@@ -4,7 +4,7 @@ output: github_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE,eval = FALSE)
+knitr::opts_chunk$set(echo = FALSE) 
 ```
 
 ## Instructions: Please read through this before you begin
@@ -29,7 +29,7 @@ knitr::opts_chunk$set(echo = TRUE,eval = FALSE)
 * First, load all the required packages with the following code. Install them if they are not installed yet.
 
 
-```{r, eval=FALSE, echo=TRUE}
+```{r}
 library(tidyverse)
 library(knitr)
 ```
@@ -54,7 +54,8 @@ economist_data <- read.csv("https://raw.githubusercontent.com/nt246/NTRES6940-da
 
 ```{r}
 economist_data %>% 
-head()
+head() %>% 
+  kable()
 ```
 
 **1.2 Explore the relationship between human development index (`HDI`) and corruption perception index (`CPI`) with a scatter plot as the following.**
@@ -98,7 +99,7 @@ ggplot(economist_data, mapping= aes(x = CPI, y = HDI, color = Region, size = HDI
 
 **1.6 Fit smoothing line to all the data points in the scatter plot from Exercise 1.4**
 
-```{r}
+```{r, message = FALSE}
 ggplot(economist_data, mapping= aes(x = CPI, y = HDI))+ #, color = Region, size = 2)) +
   geom_point(mapping = aes(color = Region, size = 2))+
 geom_smooth()
@@ -108,7 +109,7 @@ geom_smooth()
 
 **1.7 Fit a separate straight line for each region instead, and turn off the confidence** interval
 
-```{r}
+```{r, message=FALSE}
 ggplot(economist_data, mapping= aes(x = CPI, y = HDI, color = Region))+ #, size = 0.2)) +
   geom_point()+
 geom_smooth(method= "lm", se=FALSE)
@@ -118,7 +119,7 @@ geom_smooth(method= "lm", se=FALSE)
 
 **1.8 Building on top of the previous plot, show each `Region` in a different facet.**
 
-```{r}
+```{r, message = FALSE}
 ggplot(economist_data, mapping= aes(x = CPI, y = HDI, color = Region))+ #, size = 0.2)) +
   geom_point()+
 geom_smooth(method= "lm", se=FALSE)+
@@ -142,7 +143,7 @@ ggplot(economist_data, aes(x = HDI, fill = Region)) +
 
 **1.10 Show the distribution of `HDI` in each region using histogram and facetting.**
 
-```{r}
+```{r, message = FALSE}
 ggplot(economist_data, aes(x = HDI, fill = Region))+
   geom_histogram()+
   facet_wrap(~Region, nrow = 2)
@@ -185,10 +186,13 @@ library(ggplot2)
 ```
 
 
+ 
+This code is not working for me I couldn't understand what went wrong
+
 ```{r}
 
-#head(economics) %>% 
-#kniter::kable() #doesn't work
+head(economics) %>% 
+kable() #doesn't work
 
 ```
 
